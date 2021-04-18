@@ -1,0 +1,25 @@
+version: "3"
+
+networks:
+  default:
+    external:
+      name: dinamic_net
+
+services:
+  dinamic-mysql:
+    container_name: dinamic-mysql
+    build:
+      context: ../mysql/
+      dockerfile: Dockerfile
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: flowbusiness_bb
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+    volumes:
+      #removing this only if is necesary
+      - ./db:/var/lib/mysql:delegated
+      - ./dump:/docker-entrypoint-initdb.d:delegated
+      - ./mysqlconf:/etc/mysql/conf.d

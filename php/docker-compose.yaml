@@ -1,0 +1,18 @@
+version: "3"
+
+networks:
+  default:
+    external:
+      name: dinamic_net
+
+services:
+  dinamic-php:
+    container_name: dinamic-php
+    build:
+      context: ../php/
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    volumes:
+      - ../../aitek_wp:/usr/share/apache2/htdocs/aitek_wp:cached
+      - ./logs:/var/log/php:delegated
