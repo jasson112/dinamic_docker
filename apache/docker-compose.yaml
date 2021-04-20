@@ -17,6 +17,7 @@ services:
       - "80:80"
     volumes:
       - ../../aitek_wp:/usr/local/apache2/htdocs/aitek_wp:cached
+      - ../../wonder_wp:/usr/local/apache2/htdocs/wonder_wp:cached
       - ./httpd/logs:/usr/local/apache2/logs/:delegated
       #- ./conf/httpd.conf:/usr/local/apache2/conf/httpd.conf
       - ./httpd/sites-enabled:/usr/local/apache2/sites-enabled:cached
