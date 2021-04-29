@@ -13,6 +13,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5020:80"
+      - "80:80"
     volumes:
       - type: bind
         source: ../../../fherman/back/html
@@ -20,3 +21,6 @@ services:
         bind:
           propagation: shared
       - ./nginx/logs:/var/log/nginx/
+      - ../../impulse_v2/back:/usr/share/nginx/html/impulse_v2:cached
+      - ./nginx/sites-enabled:/etc/nginx/sites-enabled:cached
+      - ./nginx/sites-enabled:/etc/nginx/sites-available:cached

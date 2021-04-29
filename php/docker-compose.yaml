@@ -16,4 +16,5 @@ services:
     volumes:
       - ../../aitek_wp:/usr/share/apache2/htdocs/aitek_wp:cached
       - ../../wonder_wp:/usr/share/apache2/htdocs/wonder_wp:cached
+      - ../../impulse_v2/back:/usr/share/nginx/html/impulse_v2:cached
       - ./logs:/var/log/php:delegated
