@@ -33,3 +33,5 @@ Ejecutar los siguientes comandos:
     #por ejemplo:
     127.0.0.1 devaitek.com
     ```
+6. docker cp  ../back_office/vendor dinamic-php:/usr/local/apache2/htdocs/back_office
+7. docker cp  ../back_office/vendor dinamic-httpd:/usr/local/apache2/htdocs/back_office

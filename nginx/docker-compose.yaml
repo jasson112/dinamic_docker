@@ -22,5 +22,6 @@ services:
           propagation: shared
       - ./nginx/logs:/var/log/nginx/
       - ../../impulse_v2/back:/usr/share/nginx/html/impulse_v2:cached
+      - ../../back_office:/usr/share/nginx/html/back_office:cached
       - ./nginx/sites-enabled:/etc/nginx/sites-enabled:cached
       - ./nginx/sites-enabled:/etc/nginx/sites-available:cached
